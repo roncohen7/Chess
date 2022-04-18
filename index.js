@@ -93,14 +93,6 @@ function getInitialBoard() {
     result.push(new Piece(1, i, "pawn", WHITE_PLAYER));
     result.push(new Piece(6, i, "pawn", DARK_PLAYER));
   }
-  // result.push(new Piece(7, 0, "rook", DARK_PLAYER));
-  // result.push(new Piece(7, 1, "knight", DARK_PLAYER));
-  // result.push(new Piece(7, 2, "bishop", DARK_PLAYER));
-  // result.push(new Piece(7, 3, "queen", DARK_PLAYER));
-  // result.push(new Piece(7, 4, "king", DARK_PLAYER));
-  // result.push(new Piece(7, 5, "bishop", DARK_PLAYER));
-  // result.push(new Piece(7, 6, "knight", DARK_PLAYER));
-  // result.push(new Piece(7, 7, "rook", DARK_PLAYER));
   return result;
 }
 
