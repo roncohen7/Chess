@@ -1,17 +1,19 @@
-.tbl {
-  border-spacing: 0;
-  width: 500px;
-  height: 480px;
-}
-
-.bcell {
-    background-color: black;
-    border: 1px solid rgb(0, 0, 0);
-    border-style: inset;
-}
-
-.wcell {
-    background-color: white;
-    border: 1.5px solid rgb(0, 0, 0);
-    border-style: inset;
+   table {
+    margin: 20px;
+  }
+  
+  .light-cell {
+    background: rgb(211, 210, 210);
+    width: 70px;
+    height: 70px;
+  }
+  
+  .dark-cell {
+    background: rgb(77, 75, 75);
+    width: 70px;
+    height: 70px;
+  }
+  
+  .selected {
+    background-color: rgb(185, 185, 99);
   }
