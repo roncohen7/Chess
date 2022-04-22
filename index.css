@@ -1,19 +1,23 @@
-   table {
-    margin: 20px;
+   .table {
+    margin: 30px;
   }
   
   .light-cell {
-    background: rgb(211, 210, 210);
-    width: 70px;
-    height: 70px;
+    background: beige;
+    width: 60px;
+    height: 60px;
   }
   
   .dark-cell {
-    background: rgb(77, 75, 75);
-    width: 70px;
-    height: 70px;
+    background: burlywood;
+    width: 60px;
+    height: 60px;
   }
   
   .selected {
-    background-color: rgb(185, 185, 99);
+    background-color: rgb(48, 172, 194);
+  }
+  
+  .possible-move {
+    background: rgba(159, 78, 206, 0.959);
   }
