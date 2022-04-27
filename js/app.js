@@ -53,6 +53,7 @@ function onCellClick(row, col) {
 function addImage(cell, player, name) {
   const image = document.createElement("img");
   image.src = "images/" + player + "/" + name + ".svg";
+  image.draggable = false;
   cell.appendChild(image);
 }
 
@@ -84,50 +85,14 @@ function createChessBoard(boardData) {
     const cell = table.rows[piece.row].cells[piece.col];
     addImage(cell, piece.player, piece.type);
   }
+  if (game.winner !== undefined) {
+    const winnerPopup = document.createElement("div");
+    const winner = game.winner.charAt(0).toUpperCase() + game.winner.slice(1);
+    winnerPopup.textContent = winner + " player wins!";
+    winnerPopup.classList.add("winner");
+    table.appendChild(winnerPopup);
+  }
 }
-
-// function getInitialPieces() {
-//   let result = [];
-
-//   addFirstRowPieces(result, 0, WHITE_PLAYER);
-//   addFirstRowPieces(result, 7, BLACK_PLAYER);
-
-//   for (let i = 0; i < BOARD_SIZE; i++) {
-//     result.push(new Piece(1, i, PAWN, WHITE_PLAYER));
-//     result.push(new Piece(6, i, PAWN, BLACK_PLAYER));
-//   }
-//   return result;
-// }
-
-// function addFirstRowPieces(result, row, player) {
-//   result.push(new Piece(row, 0, ROOK, player));
-//   result.push(new Piece(row, 1, KNIGHT, player));
-//   result.push(new Piece(row, 2, BISHOP, player));
-//   result.push(new Piece(row, 3, KING, player));
-//   result.push(new Piece(row, 4, QUEEN, player));
-//   result.push(new Piece(row, 5, BISHOP, player));
-//   result.push(new Piece(row, 6, KNIGHT, player));
-//   result.push(new Piece(row, 7, ROOK, player));
-// }
-
-// function showMovesForPiece(row, col) {
-//   for (let i = 0; i < BOARD_SIZE; i++) {
-//     for (let j = 0; j < BOARD_SIZE; j++) {
-//       table.rows[i].cells[j].classList.remove("possible-move");
-//       table.rows[i].cells[j].classList.remove("selected");
-//     }
-//   }
-//   const piece = boardData.getPiece(row, col);
-//   if (Piece !== undefined) {
-//     let possibleMoves = piece.getPossibleMoves(boardData);
-//     for (let possibleMove of possibleMoves) {
-//       const cell = table.rows[possibleMove[0]].cells[possibleMove[1]];
-//       cell.classList.add("possible-move");
-//     }
-//   }
-//   table.rows[row].cells[col].classList.add("selected");
-//   selectedPiece = piece;
-// }
 
 function initGame() {
   game = new Game(WHITE_PLAYER);

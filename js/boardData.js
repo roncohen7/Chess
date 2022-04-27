@@ -24,6 +24,17 @@ class BoardData {
     }
   }
 
+  removePiece(row, col) {
+    for (let i = 0; i < this.pieces.length; i++) {
+      const piece = this.pieces[i];
+      if (piece.row === row && piece.col === col) {
+        // clean cell from piece that moved.
+        this.pieces.splice(i, 1);
+        return piece;
+      }
+    }
+  }
+
   isClear(row, col) {
     return this.getPiece(row, col) === undefined;
   }
@@ -31,15 +42,5 @@ class BoardData {
   isPlayer(row, col, player) {
     const piece = this.getPiece(row, col);
     return piece !== undefined && piece.player === player;
-  }
-
-  removePiece(row, col) {
-    for (let i = 0; i < this.pieces.length; i++) {
-      const piece = this.pieces[i];
-      if (piece.row === row && piece.col === col) {
-        // clean cell from piece that moved.
-        this.pieces.splice(i, 1);
-      }
-    }
   }
 }

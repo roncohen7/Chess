@@ -1,17 +1,21 @@
-   .table {
-    margin: 30px;
+   table {
+     height: fit-content;
+    position: relative;
+    margin: auto;
   }
   
   .light-cell {
     background: beige;
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
+    user-select: none;
   }
   
   .dark-cell {
     background: burlywood;
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
+    user-select: none;
   }
   
   .selected {
@@ -21,3 +25,22 @@
   .possible-move {
     background: rgba(159, 78, 206, 0.959);
   }
+  
+  .winner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30;
+    border-radius: 10px;
+    width: max-content;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  /* @media only screen and (max-width: 500px) {
+	  font-size: 40px;
+} */
