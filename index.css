@@ -9,6 +9,7 @@
     width: 65px;
     height: 65px;
     user-select: none;
+  text-align: center;
   }
   
   .dark-cell {
@@ -16,6 +17,7 @@
     width: 65px;
     height: 65px;
     user-select: none;
+    text-align: center;
   }
   
   .selected {
