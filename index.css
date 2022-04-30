@@ -1,5 +1,4 @@
    table {
-     height: fit-content;
     position: relative;
     margin: auto;
   }
@@ -9,7 +8,7 @@
     width: 65px;
     height: 65px;
     user-select: none;
-  text-align: center;  
+    text-align: center;  
 }
   
   .dark-cell {
@@ -42,7 +41,3 @@
   .title {
     text-align: center;
   }
-
-  /* @media only screen and (max-width: 500px) {
-	  font-size: 40px;
-} */
