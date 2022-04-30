@@ -9,8 +9,8 @@
     width: 65px;
     height: 65px;
     user-select: none;
-  text-align: center;
-  }
+  text-align: center;  
+}
   
   .dark-cell {
     background: burlywood;
@@ -25,7 +25,7 @@
   }
   
   .possible-move {
-    background: rgba(159, 78, 206, 0.959);
+    background: rgba(52, 88, 219, 0.959);
   }
   
   .winner {
