@@ -43,7 +43,7 @@ function tryUpdateSelectedPiece(row, col) {
 function onCellClick(row, col) {
   if (selectedPiece !== undefined && game.tryMove(selectedPiece, row, col)) {
     selectedPiece = undefined;
-    // create board again
+    // creates the board again.
     createChessBoard(game.boardData);
   } else {
     tryUpdateSelectedPiece(row, col);
@@ -85,12 +85,22 @@ function createChessBoard(boardData) {
     const cell = table.rows[piece.row].cells[piece.col];
     addImage(cell, piece.player, piece.type);
   }
+  // tells the user which player won the game.
   if (game.winner !== undefined) {
     const winnerPopup = document.createElement("div");
+    const winnerReset = document.createElement("p");
     const winner = game.winner.charAt(0).toUpperCase() + game.winner.slice(1);
-    winnerPopup.textContent = winner + " player wins!";
+    winnerPopup.textContent = winner + " player won!";
     winnerPopup.classList.add("winner");
     table.appendChild(winnerPopup);
+    winnerPopup.appendChild(winnerReset);
+    onCellClick = function onCellClick() {};
+    // Create a reset button to reset the game.
+    const resetButton = document.createElement("button");
+    resetButton.setAttribute("onclick", "location.reload()");
+    resetButton.className = "resetButton";
+    resetButton.textContent = "Reset Game";
+    document.body.appendChild(resetButton);
   }
 }
 

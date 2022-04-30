@@ -5,14 +5,15 @@ class Game {
     this.winner = undefined;
   }
 
+  // Tries to actually make a move. Returns true if successful.
   tryMove(piece, row, col) {
     const possibleMoves = this.getPossibleMoves(piece);
     for (const possibleMove of possibleMoves) {
       if (possibleMove[0] === row && possibleMove[1] === col) {
-        const removePiece = this.boardData.removePiece(row, col);
+        const removedPiece = this.boardData.removePiece(row, col);
         piece.row = row;
         piece.col = col;
-        if (removePiece !== undefined && removePiece.type === KING) {
+        if (removedPiece !== undefined && removedPiece.type === KING) {
           this.winner = piece.player;
         }
         this.currentPlayer = piece.getEnemy();
@@ -22,6 +23,7 @@ class Game {
     return false;
   }
 
+  // shows the possible moves of the piece selected.
   getPossibleMoves(piece) {
     if (this.currentPlayer !== piece.player || this.winner !== undefined) {
       return [];
